@@ -4,9 +4,14 @@ namespace Snake.Classes
 {
     class Point
     {
+        /*
         private int x;
         private int y;
         private char sym;
+        */
+        public int x;
+        public int y;
+        public char sym;
 
         public Point() { }
         public Point( int x, int y, char sym )

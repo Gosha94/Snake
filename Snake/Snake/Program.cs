@@ -1,6 +1,5 @@
 ﻿using System;
 using Snake.Classes;
-using System.Collections.Generic;
 
 namespace Snake
 {
@@ -8,19 +7,7 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            List<Point> points = new List<Point>()
-            {
-                new Point(0,0,'!'),
-                new Point(1,1,'@'),
-                new Point(2,2,'#'),
-                new Point(3,3,'$'),
-                new Point(4,4,'%'),
-            };
-
-            foreach(Point point in points)
-            {
-                point.DrawPoint();
-            }
+            HorizontalLine Hline = new HorizontalLine(0,15,0,'*');
 
             Console.ReadLine();
         }        

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Snake.Enums;
+
+using System;
 
 namespace Snake.Classes
 {
@@ -14,6 +16,14 @@ namespace Snake.Classes
         public char sym;
 
         public Point() { }
+
+        public Point(Point p)
+        {
+            this.x = p.x;
+            this.y = p.y;
+            this.sym = p.sym;
+        }
+
         public Point( int x, int y, char sym )
         {
             this.x = x;
@@ -23,10 +33,23 @@ namespace Snake.Classes
             //DrawPoint();
         }
 
+        public void Move( int offset, Direction direction)
+        {
+            if (direction == Direction.Right) x = x + offset;
+            if (direction == Direction.Left) x = x - offset;
+            if (direction == Direction.Up) y = y - offset;
+            if (direction == Direction.Down) y = y + offset;
+        }
+
         public void DrawPoint()
         {
             Console.SetCursorPosition( x, y );
             Console.Write( sym );
+        }
+
+        public override string ToString()
+        {
+            return x +" , "+ y + " , " + sym;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using Snake.Classes;
+using Snake.Enums;
 
 namespace Snake
 {
@@ -29,6 +30,12 @@ namespace Snake
             downLine.Draw();
             leftLine.Draw();
             rightLine.Draw();
+
+            // Создаем точку, но пока ее не рисуем
+            Point point = new Point(10, 10, '*');
+            // Рисуем змейку
+            Classes.Snake snake = new Classes.Snake(point, 6, Direction.Right);
+            snake.Draw();
 
             Console.ReadLine();
         }        

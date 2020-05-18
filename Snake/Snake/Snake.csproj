@@ -43,9 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\Direction.cs" />
     <Compile Include="Classes\Figure.cs" />
     <Compile Include="Classes\HorizontalLine.cs" />
     <Compile Include="Classes\Point.cs" />
+    <Compile Include="Classes\Snake.cs" />
     <Compile Include="Classes\VerticalLine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -20,7 +20,7 @@ namespace Snake.Classes
             this.y = y;
             this.sym = sym;
 
-            DrawPoint();
+            //DrawPoint();
         }
 
         public void DrawPoint()

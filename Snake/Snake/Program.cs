@@ -1,6 +1,7 @@
 ﻿using System;
 using Snake.Classes;
 using Snake.Enums;
+using System.Threading;
 
 namespace Snake
 {
@@ -38,6 +39,16 @@ namespace Snake
             // Рисуем змейку
             snake.Draw();
             // Перемещаем змейку
+            snake.Move();
+            Thread.Sleep(1000);
+            snake.Move();
+            Thread.Sleep(1000);
+            snake.Move();
+            Thread.Sleep(1000);
+            snake.Move();
+            Thread.Sleep(1000);
+            snake.Move();
+            Thread.Sleep(1000);
             snake.Move();
 
             Console.ReadLine();

@@ -39,19 +39,21 @@ namespace Snake
             // Рисуем змейку
             snake.Draw();
             // Перемещаем змейку
-            snake.Move();
-            Thread.Sleep(1000);
-            snake.Move();
-            Thread.Sleep(1000);
-            snake.Move();
-            Thread.Sleep(1000);
-            snake.Move();
-            Thread.Sleep(1000);
-            snake.Move();
-            Thread.Sleep(1000);
-            snake.Move();
-
-            Console.ReadLine();
+            //snake.Move();
+            //Thread.Sleep(1000);
+            //snake.Move();
+            //Thread.Sleep(1000);
+            //snake.Move();
+            while ( true )
+            {
+                if ( Console.KeyAvailable )
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.KeyHandle( key.Key );                    
+                }
+                Thread.Sleep( 100 );
+                snake.Move();
+            }            
         }        
     }
 }

@@ -48,5 +48,17 @@ namespace Snake.Classes
             nextPoint.Move(1, this.direction);
             return nextPoint;
         }
+
+        public void KeyHandle( ConsoleKey key )
+        {
+            if ( key == ConsoleKey.LeftArrow )
+                direction = Direction.Left;
+            else if ( key == ConsoleKey.RightArrow )
+                direction = Direction.Right;
+            else if ( key == ConsoleKey.DownArrow )
+                direction = Direction.Down;
+            else if ( key == ConsoleKey.UpArrow )
+                direction = Direction.Up;
+        }
     }
 }

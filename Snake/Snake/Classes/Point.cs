@@ -49,7 +49,7 @@ namespace Snake.Classes
 
         public override string ToString()
         {
-            return x +" , "+ y + " , " + sym;
+            return x + " , " + y + " , " + sym;
         }
 
         public void Clear()

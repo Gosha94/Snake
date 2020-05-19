@@ -38,21 +38,32 @@ namespace Snake
             Classes.Snake snake = new Classes.Snake(point, 6, Direction.Right);
             // Рисуем змейку
             snake.Draw();
-            // Перемещаем змейку
-            //snake.Move();
-            //Thread.Sleep(1000);
-            //snake.Move();
-            //Thread.Sleep(1000);
-            //snake.Move();
+            
+            // Создаем объект Еда, передаем в конструктор размеры поля игры и символ еды
+            FoodCreator foodCreator = new FoodCreator(80, 25, '$');
+            // Создаем новую точку, и помещаем туда точку с едой, сгенерированную методом CreateFood
+            Point food = foodCreator.CreateFood();
+            // Рисуем точку еды
+            food.DrawPoint();
+
             while ( true )
             {
+                // Если направление движение головы змейки попадает на еду, 
+                // создаем новую рандомную еду на поле, и двигаем змейку
+                if (snake.Eat(food)) 
+                {
+                    food = foodCreator.CreateFood();
+                    food.DrawPoint();
+                }
+                else snake.Move();
+
+                Thread.Sleep( 100 );
+
                 if ( Console.KeyAvailable )
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
                     snake.KeyHandle( key.Key );                    
-                }
-                Thread.Sleep( 100 );
-                snake.Move();
+                }                
             }            
         }        
     }

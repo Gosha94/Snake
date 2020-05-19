@@ -45,7 +45,7 @@ namespace Snake.Classes
         {
             Point head = pointsList.Last();
             Point nextPoint = new Point( head );
-            nextPoint.Move(1, this.direction);
+            nextPoint.Move( 1, this.direction );
             return nextPoint;
         }
 
@@ -59,6 +59,20 @@ namespace Snake.Classes
                 direction = Direction.Down;
             else if ( key == ConsoleKey.UpArrow )
                 direction = Direction.Up;
+        }
+
+        internal bool Eat( Point food )
+        {
+            Point head = GetNextPoint();
+            // Если координата головы змейки совпадает с координатой еды
+            if (head.IsHit(food))
+            {
+                // Заменяем еду на голову змейки и увеличиваем змейку
+                food.sym = head.sym;
+                pointsList.Add(food);
+                return true;
+            }
+            else return false;
         }
     }
 }

@@ -33,9 +33,12 @@ namespace Snake
 
             // Создаем точку, но пока ее не рисуем
             Point point = new Point(10, 10, '*');
-            // Рисуем змейку
+            //Создаем змейку, но пока не рисуем ее
             Classes.Snake snake = new Classes.Snake(point, 6, Direction.Right);
+            // Рисуем змейку
             snake.Draw();
+            // Перемещаем змейку
+            snake.Move();
 
             Console.ReadLine();
         }        

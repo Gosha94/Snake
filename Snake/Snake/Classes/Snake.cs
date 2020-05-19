@@ -1,5 +1,7 @@
 ﻿using Snake.Enums;
 using System.Collections.Generic;
+using System;
+using System.Linq;
 
 namespace Snake.Classes
 {
@@ -23,6 +25,17 @@ namespace Snake.Classes
             }
 
             
+        }
+
+        internal void Move()
+        {
+            Point tail = pointsList.First();
+            pointsList.Remove( tail );
+            Point head = GetNextPoint();
+            pointsList.Add( head );
+            // Удаляем крайнюю с конца точку хвоста змейки
+            tail.Clear();
+            head.DrawPoint();
         }
     }
 }

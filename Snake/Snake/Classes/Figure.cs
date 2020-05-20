@@ -6,7 +6,7 @@ namespace Snake.Classes
     {
         protected List<Point> pointsList;
 
-        public void Draw()
+        public virtual void Draw()
         {
             foreach (Point point in pointsList)
             {

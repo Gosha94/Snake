@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Walls.cs" />
     <Compile Include="Enums\Direction.cs" />
     <Compile Include="Classes\Figure.cs" />
     <Compile Include="Classes\HorizontalLine.cs" />

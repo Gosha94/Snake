@@ -49,6 +49,19 @@ namespace Snake.Classes
             return nextPoint;
         }
 
+        internal bool IsHitTail()
+        {
+            var head = pointsList.Last();
+            // Перебираем все точки начиная с хвоста, заканчивая точкой перед головой
+            for ( int i = 0; i < pointsList.Count - 2 ; i++ )
+            {
+                // Если координаты головы и любой другой точки змейки совпадают, то true
+                if ( head.IsHit( pointsList[ i ] ) )
+                    return true;
+            }
+            return false;
+        }
+
         public void KeyHandle( ConsoleKey key )
         {
             if ( key == ConsoleKey.LeftArrow )
@@ -74,5 +87,6 @@ namespace Snake.Classes
             }
             else return false;
         }
+        
     }
 }
